@@ -1,20 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct student {
+struct student
+{
   char email[50];
   int roll_no;
   int marks[3];
 };
 
-int main() {
+int main()
+{
   struct student s;
   FILE *fptr;
   int i;
 
   // Open file in write mode
   fptr = fopen("record.txt", "w");
-  if (fptr == NULL) {
+  if (fptr == NULL)
+  {
     printf("Error opening file!\n");
     exit(1);
   }
@@ -25,7 +28,8 @@ int main() {
   printf("Enter roll number: ");
   scanf("%d", &s.roll_no);
   printf("Enter marks of assignment1,2,3: ");
-  for (i = 0; i < 3; i++) {
+  for (i = 0; i < 3; i++)
+  {
     scanf("%d", &s.marks[i]);
   }
 
@@ -33,7 +37,8 @@ int main() {
   fprintf(fptr, "Email: %s\n", s.email);
   fprintf(fptr, "Roll Number: %d\n", s.roll_no);
   fprintf(fptr, "Marks of assignment1,2,3: ");
-  for (i = 0; i < 3; i++) {
+  for (i = 0; i < 3; i++)
+  {
     fprintf(fptr, "%d ", s.marks[i]);
   }
 
@@ -41,7 +46,8 @@ int main() {
 
   // Open file in read mode
   fptr = fopen("record.txt", "r");
-  if (fptr == NULL) {
+  if (fptr == NULL)
+  {
     printf("Error opening file!\n");
     exit(1);
   }
@@ -56,7 +62,8 @@ int main() {
   printf("Email: %s\n", s.email);
   printf("Roll Number: %d\n", s.roll_no);
   printf("Marks of three assignments: ");
-  for (i = 0; i < 3; i++) {
+  for (i = 0; i < 3; i++)
+  {
     printf("%d ", s.marks[i]);
   }
 

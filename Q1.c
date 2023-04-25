@@ -1,32 +1,37 @@
 #include <stdio.h>
 
-struct Complex {
+struct Complex
+{
     float real;
     float imag;
 };
 
-struct Complex add(struct Complex c1, struct Complex c2) {
+struct Complex add(struct Complex c1, struct Complex c2)
+{
     struct Complex result;
     result.real = c1.real + c2.real;
     result.imag = c1.imag + c2.imag;
     return result;
 }
 
-struct Complex sub(struct Complex c1, struct Complex c2) {
+struct Complex sub(struct Complex c1, struct Complex c2)
+{
     struct Complex result;
     result.real = c1.real - c2.real;
     result.imag = c1.imag - c2.imag;
     return result;
 }
 
-struct Complex mul(struct Complex c1, struct Complex c2) {
+struct Complex mul(struct Complex c1, struct Complex c2)
+{
     struct Complex result;
     result.real = c1.real * c2.real - c1.imag * c2.imag;
     result.imag = c1.real * c2.imag + c1.imag * c2.real;
     return result;
 }
 
-int main() {
+int main()
+{
     struct Complex c1, c2, res;
     printf("Enter real and imaginary part of first complex number:\n");
     scanf("%f%f", &c1.real, &c1.imag);
